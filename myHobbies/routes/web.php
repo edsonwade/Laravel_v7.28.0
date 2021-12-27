@@ -13,9 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+
+Route::group(['prefix' => "app"], function () {
+    Route::get('/', function () {
+        return view('starting_page');
+    })->name("app.home");
+
+    Route::get('/info', function () {
+        return view('info');
+    })->name("app.info");
 });
+
 
 Auth::routes();
 
