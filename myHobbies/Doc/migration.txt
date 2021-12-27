@@ -1,0 +1,11 @@
+!-> create a model 
+
+php artisan make:model Hobby  -a
+Model created successfully.
+Factory created successfully.
+Created Migration: 2021_12_27_221847_create_hobbies_table
+Seeder created successfully.
+Controller created successfully.
+
+
+ -a -> cria Model,Factory,Seeder,Controller.
