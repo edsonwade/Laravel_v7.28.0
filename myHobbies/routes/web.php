@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HobbyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => "app"], function () {
-    Route::get('/', function () {
-        return view('starting_page');
-    })->name("app.home");
-
+    Route::get('/', 'HobbyController@index')->name("app.home");
     Route::get('/info', function () {
         return view('info');
     })->name("app.info");

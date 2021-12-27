@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Hobby;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HobbyController extends Controller
 {
@@ -13,8 +13,12 @@ class HobbyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+
+    
+    {   
+        $data = DB::table('hobbies')->get();
+        die($data);
+        return view('layouts.starting_page',compact('data'));
     }
 
     /**
@@ -41,10 +45,10 @@ class HobbyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Hobby $hobby)
+    public function show($id)
     {
         //
     }
@@ -52,10 +56,10 @@ class HobbyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hobby $hobby)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +68,10 @@ class HobbyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hobby  $hobby
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hobby $hobby)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +79,10 @@ class HobbyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hobby  $hobby
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hobby $hobby)
+    public function destroy($id)
     {
         //
     }

@@ -1,0 +1,4 @@
+"classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
