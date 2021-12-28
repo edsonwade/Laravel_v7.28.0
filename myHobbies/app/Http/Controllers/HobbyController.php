@@ -73,13 +73,20 @@ class HobbyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Hobby $hobby)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3',
+            'description' => 'required|min:10',
+        ]);
+
+        $hobby->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
+        return redirect()->route('hobby.index')->with('message', 'Hobby Updated Successfully');
+
     }
 
     /**

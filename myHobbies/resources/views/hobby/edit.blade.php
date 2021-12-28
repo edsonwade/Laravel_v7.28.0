@@ -7,7 +7,9 @@
                 <div class="card">
                     <div class="card-header">Edit Hobby</div>
                     <div class="card-body">
-                        <form action="{{route('hobby.index')}}" method="get">
+                        <form action="{{route('hobby.index')}}/{{$hobby->id}}" method="post">
+                            @method('PUT')
+                            @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control {{$errors->has('name') ? 'border-danger': ''}}"
@@ -21,7 +23,7 @@
                                           name="description" rows="5"></textarea>
                                 <small class="form-text text-danger">{{$errors->first('description')}}</small>
                             </div>
-                            <input class="btn btn-primary mt-4" type="submit" value="Save Hobby">
+                            <input class="btn btn-primary mt-4" type="submit" value="Update Hobby">
                         </form>
                         <a class="btn btn-primary float-right" href="{{route('hobby.index')}}"><i
                                 class="fas fa-arrow-circle-up"></i> Back</a>
