@@ -26,22 +26,22 @@ class HobbyController extends Controller
      */
     public function create(Request $request)
     {
-//        $hobbies = Hobby::create([
-//            'name' => $request->input('name'),
-//            'description' => $request->input('descritption'),
-//        ]);
+//
         return view('hobby.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request)
     {
-        //
+         Hobby::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
+         return redirect()->route('hobby.index')->with('message', 'data created with success!!');
     }
 
     /**
