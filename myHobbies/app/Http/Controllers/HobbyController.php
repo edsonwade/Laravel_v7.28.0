@@ -37,11 +37,15 @@ class HobbyController extends Controller
      */
     public function store(Request $request)
     {
-         Hobby::create([
+        $request->validate([
+            'name' => 'required|min:3',
+            'description' => 'required|min:10',
+        ]);
+        Hobby::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
         ]);
-         return redirect()->route('hobby.index')->with('message', 'data created with success!!');
+        return redirect()->route('hobby.index')->with('message', 'data created with success!!');
     }
 
     /**
