@@ -63,11 +63,11 @@ class HobbyController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return
      */
-    public function edit($id)
+    public function edit(Hobby $hobby)
     {
-        //
+        return view('hobby.edit', compact('hobby'));
     }
 
     /**
