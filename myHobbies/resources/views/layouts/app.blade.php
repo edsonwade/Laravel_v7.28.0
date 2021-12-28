@@ -40,9 +40,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li><a class="navbar-link text-decoration-none active text-dark p-2 bg-light {{Request::is('/') ? 'active' : '' }} "
-                        href="{{ route('app.home') }}">Home</a></li>  
+                        href="{{ route('app.home') }}">Home</a></li>
                        <li><a class="navbar-link text-decoration-none text-dark p-2 bg-light {{Request::is('info') ? 'active' : '' }} "
-                        href="{{ route('app.info') }}">Info</a></li> 
+                        href="{{ route('app.info') }}">Info</a></li>
+
+                       <li><a class="navbar-link text-decoration-none text-dark p-2 bg-light {{Request::is('hobby*') ? 'active' : '' }} "
+                        href="/hobby">Hobbies</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -61,7 +64,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{Auth::user()->name}}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

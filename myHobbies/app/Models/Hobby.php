@@ -9,5 +9,7 @@ class Hobby extends Model
     //
     protected $table = 'hobbies';
     protected $fillable = ['name','description'];
-    
+
+
+
 }

@@ -12,7 +12,11 @@
                 <div class="card-body">
 
 
-            
+                  @foreach ($data as $data )
+                      echo "<pre>";
+                      var_dump(json_encode($data['name']));
+                      echo "</pre>";
+                  @endforeach
                     
                   
                     {{ __('You are logged in!') }}

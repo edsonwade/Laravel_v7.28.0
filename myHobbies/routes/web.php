@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+
 
 
 Route::group(['prefix' => "app"], function () {
@@ -27,6 +25,8 @@ Route::group(['prefix' => "app"], function () {
     })->name("app.info");
 });
 
+
+Route::resource('hobby','HobbyController');
 
 Auth::routes();
 
