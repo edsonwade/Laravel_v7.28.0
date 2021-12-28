@@ -51,12 +51,12 @@ class HobbyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Hobby $hobby
+     * @return
      */
-    public function show($id)
+    public function show(Hobby $hobby)
     {
-        //
+        return view('hobby.show', compact('hobby'));
     }
 
     /**
