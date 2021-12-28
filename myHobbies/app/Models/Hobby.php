@@ -8,8 +8,7 @@ class Hobby extends Model
 {
     //
     protected $table = 'hobbies';
-    protected $fillable = ['name','description'];
-
+    protected $fillable = ['name', 'description'];
 
 
 }
