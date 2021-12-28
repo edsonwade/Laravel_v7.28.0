@@ -45,7 +45,7 @@ class HobbyController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description'),
         ]);
-        return redirect()->route('hobby.index')->with('message', 'data created with success!!');
+        return redirect()->route('hobby.index')->with('message', 'new hobby created with success!!');
     }
 
     /**

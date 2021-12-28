@@ -89,6 +89,19 @@
     </nav>
 
     <main class="py-4">
+        @if(session('message'))
+            <div class="alert alert-success" role="alert">
+                {{session('message')}}
+            </div>
+        @endif
+
+            @isset($message)
+            <div class="container">
+                <div class="alert alert-warning" role="alert">
+                    {{$message}}
+                </div>
+            </div>
+        @endisset
         @if($errors->any())
             <div class="container">
                 <div class="alert alert-danger" role="alert">
