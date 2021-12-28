@@ -11,4 +11,14 @@ class Hobby extends Model
     protected $fillable = ['name', 'description'];
 
 
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('Tag');
+    }
+
 }
