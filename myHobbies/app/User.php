@@ -2,6 +2,8 @@
 
 namespace App;
 
+
+use App\Models\Hobby;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,11 +13,11 @@ class User extends Authenticatable
 
     use Notifiable;
 
+
     public function hobbies()
     {
-        return $this->hasMany('Hobby');
+        return $this->hasMany(' App\Hobby');
     }
-
 
     /**
      * The attributes that are mass assignable.

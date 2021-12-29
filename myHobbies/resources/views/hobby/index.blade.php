@@ -19,6 +19,10 @@
                                            href="{{route('hobby.index')}}/{{$hobby->id}}/edit"> <i
                                                 class="fas fa-edit"></i>
                                             Edit Hobby</a>
+                                    @endauth
+                                <!-- display the number of hobbies the user has ($hobby->user->hobbies->count()}} not working-->
+                                    <span class="mx-2">Posted By: {{$hobby->user->name}} )</span>
+                                    @auth
                                         <form class="float-right" style="display: inline;"
                                               action="{{route('hobby.index')}}/{{$hobby->id}}"
                                               method="post">
