@@ -15,7 +15,9 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        $hobbies = Hobby::all();
+        //$hobbies = Hobby::all();
+        //$hobbies = Hobby::paginate(10);
+        $hobbies = DB::table('hobbies')->Paginate(5);
         return view('hobby.index', compact('hobbies'));
     }
 

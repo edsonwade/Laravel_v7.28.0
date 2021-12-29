@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="mt-2">
-                    <a href="{{route('hobby.index')}}" class=" btn btn-primary btn-sm"> <i
+                    <a href="{{URL::previous()}}" class=" btn btn-primary btn-sm"> <i
                             class="fas fa-arrow-alt-circle-up"></i> Back to overview </a>
                 </div>
             </div>

@@ -16,7 +16,8 @@
                                     <a class="btn btn-sm btn-outline-success ml-2"
                                        href="{{route('hobby.index')}}/{{$hobby->id}}/edit"> <i class="fas fa-edit"></i>
                                         Edit Hobby</a>
-                                    <form class="float-right" style="display: inline;" action="{{route('hobby.index')}}/{{$hobby->id}}"
+                                    <form class="float-right" style="display: inline;"
+                                          action="{{route('hobby.index')}}/{{$hobby->id}}"
                                           method="post">
                                         @method('DELETE')
                                         @csrf
@@ -26,6 +27,11 @@
                             @endforeach
                         </ul>
                     </div>
+                </div>
+                <!--Paginate-->
+                <div class="mt-3">
+                    {{$hobbies->links()}}
+                   <!--$hobbies->onEachSide(2)->links()}}-->
                 </div>
                 <div class="mt-2">
                     <a href="{{route('hobby.create')}}" class=" btn btn-success btn-sm"> <i
