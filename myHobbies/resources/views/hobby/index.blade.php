@@ -13,16 +13,20 @@
                                 <li class="list-group-item">
                                     <a class="text-decoration-none" title="Show Details"
                                        href="/hobby/{{$hobby->id}}">{{$hobby->name}}</a>
-                                    <a class="btn btn-sm btn-outline-success ml-2"
-                                       href="{{route('hobby.index')}}/{{$hobby->id}}/edit"> <i class="fas fa-edit"></i>
-                                        Edit Hobby</a>
-                                    <form class="float-right" style="display: inline;"
-                                          action="{{route('hobby.index')}}/{{$hobby->id}}"
-                                          method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <input class="btn btn-sm btn-outline-danger" type="submit" value="delete">
-                                    </form>
+                                    <!-- use to hidden this button when the user is not logged in system-->
+                                    @auth
+                                        <a class="btn btn-sm btn-outline-success ml-2"
+                                           href="{{route('hobby.index')}}/{{$hobby->id}}/edit"> <i
+                                                class="fas fa-edit"></i>
+                                            Edit Hobby</a>
+                                        <form class="float-right" style="display: inline;"
+                                              action="{{route('hobby.index')}}/{{$hobby->id}}"
+                                              method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input class="btn btn-sm btn-outline-danger" type="submit" value="delete">
+                                        </form>
+                                    @endauth
                                 </li>
                             @endforeach
                         </ul>
@@ -30,13 +34,15 @@
                 </div>
                 <!--Paginate-->
                 <div class="mt-3">
-                    {{$hobbies->links()}}
-                   <!--$hobbies->onEachSide(2)->links()}}-->
+                {{$hobbies->links()}}
+                <!--$hobbies->onEachSide(2)->links()}}-->
                 </div>
-                <div class="mt-2">
-                    <a href="{{route('hobby.create')}}" class=" btn btn-success btn-sm"> <i
-                            class="fas fa-plus-circle"></i> Create new Hobby </a>
-                </div>
+                @auth
+                    <div class="mt-2">
+                        <a href="{{route('hobby.create')}}" class=" btn btn-success btn-sm"> <i
+                                class="fas fa-plus-circle"></i> Create new Hobby </a>
+                    </div>
+                @endauth
             </div>
         </div>
     </div>

@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class HobbyController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +52,7 @@ class HobbyController extends Controller
         Hobby::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'user_id' => auth()->id()
         ]);
         return redirect()->route('hobby.index')->with('message', 'new hobby created with success!!');
     }
