@@ -27,6 +27,7 @@
                                             <input class="btn btn-sm btn-outline-danger" type="submit" value="delete">
                                         </form>
                                     @endauth
+                                    <span class="float-right mx-2">{{$hobby->created_at->diffForHumans()}}</span>
                                 </li>
                             @endforeach
                         </ul>

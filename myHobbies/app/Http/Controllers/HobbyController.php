@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Hobby;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class HobbyController extends Controller
 {
@@ -23,7 +24,9 @@ class HobbyController extends Controller
     {
         //$hobbies = Hobby::all();
         //$hobbies = Hobby::paginate(10);
-        $hobbies = DB::table('hobbies')->Paginate(5);
+        //$hobbies = DB::table('hobbies')->Paginate(5);
+        // return the order when the hobbies where created
+        $hobbies = Hobby::orderBy('created_at', 'DESC')->Paginate(5);
         return view('hobby.index', compact('hobbies'));
     }
 
